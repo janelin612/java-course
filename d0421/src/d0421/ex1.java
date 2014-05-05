@@ -11,6 +11,7 @@ public class ex1 {
 		while(true){
 			int d = 0;
 			System.out.print("Key in a integer less than 10:");
+			//TODO 防呆
 			d=scan.nextInt();
 	
 			for(int i=0;i<d;i++){
