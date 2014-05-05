@@ -1,7 +1,8 @@
 package d0317;
 /*
  * 取出四維陣列中，教授指定編號的格子內的值
- * 由於教授未指定格內填的值，故我直接依編號填入
+ * 分別為第一格，第五格，第十八格跟最後一格
+ * 由於教授未指定格內填的值，故選擇直接依編號填入
  */
 
 public class ex2 {
@@ -36,7 +37,9 @@ public class ex2 {
 
 	private static void printChosenArrayElement(long[][][][] array,int n){
 		int a=0,b=0,c=0,d=0;
-		n--; 				//陣列從零開始
+		n--; 				//陣列編號從零開始
+		
+		//以下將指定編號換算為四維陣列的座標
 		a=n/12; 			//12=3x2x2
 		b=(n%12)/4; 		//4=2x2
 		c=((n%12)%4)/2;
