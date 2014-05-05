@@ -1,6 +1,5 @@
 package d0310;
 //將字串轉為ASCII碼及二進位表示
-//僅支援轉換A-Z a-z 以及空白
 
 public class showILoveYou {
 			
