@@ -9,9 +9,9 @@ public class showILoveYou {
 
 		for (int i=0;i<ch.length;i++){
 			int ASCII = (int)ch[i];
-			System.out.println(ch[i]);
-			System.out.println(ASCII);
-			System.out.println(new Integer(ASCII).toBinaryString(ASCII));
+			System.out.println(ch[i]); 							//印出字元
+			System.out.println(ASCII); 							//印出字元的ascii code
+			System.out.println(Integer.toBinaryString(ASCII));	//印出ascii code的二進位形式
 			System.out.println("-----");
 		}
 	}
