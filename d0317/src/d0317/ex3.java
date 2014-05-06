@@ -1,5 +1,6 @@
 package d0317;
-
+// 印出兩矩陣相加的結果
+ 
 public class ex3 {
 
 	public static void main(String[] args) {
@@ -32,8 +33,11 @@ public class ex3 {
 		for(int i=0;i<x;i++){
 			for(int j=0;j<y;j++){
 				System.out.print(a[i][j]);
-				if(j<y-1)//避免最後多印一個逗號
+				
+				boolean isNotLast=(j<y-1);
+				if(isNotLast)//避免最後多印一個逗號
 					System.out.print(",");
+				
 			}
 			System.out.print("\n");
 		}
