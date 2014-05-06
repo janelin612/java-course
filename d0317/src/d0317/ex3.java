@@ -19,22 +19,22 @@ public class ex3 {
 		
 		//output
 		System.out.print("b1 \n");
-		printTwoDimArray(b1,2,3);
+		printTwoDimArray(b1);
 		
 		System.out.print("\nb2 \n");
-		printTwoDimArray(b2,2,3);
+		printTwoDimArray(b2);
 		
 		System.out.print("\nb1+b2 \n");
-		printTwoDimArray(ans,2,3);
+		printTwoDimArray(ans);
 	}
 	
 	//將二維陣列印出來
-	private static void printTwoDimArray(int[][] a,int x,int y){
-		for(int i=0;i<x;i++){
-			for(int j=0;j<y;j++){
+	private static void printTwoDimArray(int[][] a){
+		for(int i=0;i<2;i++){
+			for(int j=0;j<3;j++){
 				System.out.print(a[i][j]);
 				
-				boolean isNotLast=(j<y-1);
+				boolean isNotLast=(j<2);
 				if(isNotLast)//避免最後多印一個逗號
 					System.out.print(",");
 				
