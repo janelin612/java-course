@@ -6,28 +6,27 @@ package d0317;
  */
 
 public class ex2 {
-
+	static long[][][][] fourDimArray;
 	public static void main(String[] args) {
-		long[][][][] fourDimArray;
 		fourDimArray = new long[3][3][2][2];
 
-		setArrayElements(fourDimArray);
+		setArrayElements();
 		
-		printChosenArrayElement(fourDimArray,1);
-		printChosenArrayElement(fourDimArray,5);
-		printChosenArrayElement(fourDimArray,18);
-		printChosenArrayElement(fourDimArray,36);
+		printChosenArrayElement(1);
+		printChosenArrayElement(5);
+		printChosenArrayElement(18);
+		printChosenArrayElement(36);
 
 	}
 	
 	//對陣列填值
-	private static void setArrayElements(long[][][][] array){
+	private static void setArrayElements(){
 		long count=1;
 		for(int a=0;a<3;a++){
 			for(int b=0;b<3;b++){
 				for(int c=0;c<2;c++){
 					for(int d=0;d<2;d++){
-						array[a][b][c][d]=count;
+						fourDimArray[a][b][c][d]=count;
 						count++;
 					}
 				}
@@ -35,7 +34,8 @@ public class ex2 {
 		}
 	}
 
-	private static void printChosenArrayElement(long[][][][] array,int n){
+	//印出指定編號的陣列元素值
+	private static void printChosenArrayElement(int n){
 		int a=0,b=0,c=0,d=0;
 		n--; 				//陣列編號從零開始
 		
@@ -45,7 +45,7 @@ public class ex2 {
 		c=((n%12)%4)/2;
 		d=((n%12)%4)%2;
 		
-		System.out.println(array[a][b][c][d]);
+		System.out.println(fourDimArray[a][b][c][d]);
 	}
 	
 }
