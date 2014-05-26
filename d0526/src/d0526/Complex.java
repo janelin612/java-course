@@ -1,4 +1,7 @@
 package d0526;
+
+import java.util.Scanner;
+
 //複數的資料結構
 public class Complex {
 	
@@ -7,6 +10,10 @@ public class Complex {
 	public Complex(double realNum,double imaginaryNum){
 		real=realNum;
 		imag=imaginaryNum;
+	}
+	public Complex(){
+		real=0;
+		imag=0;
 	}
 	
 	public double getReal(){
@@ -18,6 +25,15 @@ public class Complex {
 	
 	public void print(){
 		System.out.println(real+"+"+imag+"i");
+	}
+	
+	public void initial(){
+		Scanner scan=new Scanner(System.in);
+		
+		System.out.println("請輸入實部:");
+		real=scan.nextDouble();
+		System.out.println("請輸入虛部:");
+		imag=scan.nextDouble();
 	}
 
 }
