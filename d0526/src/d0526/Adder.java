@@ -1,6 +1,6 @@
 package d0526;
 
-public class adder {
+public class Adder {
 	/***************
 	 * 字元與字串相加
 	 * 二微陣列相加
@@ -15,23 +15,23 @@ public class adder {
 	private int i;
 	private double d;
 	
-	private complex complexA,complexB;
+	private Complex complexA,complexB;
 	
 	
 	//全部的建構子
-	public adder(char c,String s){
+	public Adder(char c,String s){
 		charAndStringOperator(c,s);
 	}
-	public adder(twoDimArray a,twoDimArray b){
+	public Adder(TwoDimArray a,TwoDimArray b){
 		twoDimArrayOperator(a,b);
 	}
-	public adder(int integer,double doub){
+	public Adder(int integer,double doub){
 		intAndDoubleOperator(integer,doub);
 	}
-	public adder(double doub,int integer){
+	public Adder(double doub,int integer){
 		doubleAndIntOperator(doub,integer);
 	}
-	public adder(complex a,complex b){
+	public Adder(Complex a,Complex b){
 		complexOperator(a,b);
 	}
 	
@@ -52,13 +52,13 @@ public class adder {
 		
 	}
 
-	private void twoDimArrayOperator(twoDimArray a, twoDimArray b) {
+	private void twoDimArrayOperator(TwoDimArray a, TwoDimArray b) {
 		int LU=a.getElement(0)+b.getElement(0);
 		int RU=a.getElement(1)+b.getElement(1);
 		int LD=a.getElement(2)+b.getElement(2);
 		int RD=a.getElement(3)+b.getElement(3);
 		
-		twoDimArray c=new twoDimArray(LU,RU,LD,RD);
+		TwoDimArray c=new TwoDimArray(LU,RU,LD,RD);
 		
 		c.print();
 	}
@@ -73,7 +73,7 @@ public class adder {
 		
 	}
 
-	private void complexOperator(complex a, complex b) {
+	private void complexOperator(Complex a, Complex b) {
 		// TODO Auto-generated method stub
 		
 	}

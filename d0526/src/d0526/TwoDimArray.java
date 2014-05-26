@@ -1,9 +1,9 @@
 package d0526;
 //自定義的陣列資料結構
-public class twoDimArray {
+public class TwoDimArray {
 	private int LU,RU,LD,RD;
 	
-	public twoDimArray(int leftUp,int rightUp,int leftDown,int rightDown){
+	public TwoDimArray(int leftUp,int rightUp,int leftDown,int rightDown){
 		LU=leftUp;
 		RU=rightUp;
 		LD=leftDown;
