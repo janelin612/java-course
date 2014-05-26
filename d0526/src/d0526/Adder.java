@@ -64,18 +64,18 @@ public class Adder {
 	}
 
 	private void intAndDoubleOperator(int integer, double doub) {
-		// TODO Auto-generated method stub
+		System.out.println(integer+doub);
 		
 	}
 
 	private void doubleAndIntOperator(double doub, int integer) {
-		// TODO Auto-generated method stub
+		System.out.println(integer+doub);
 		
 	}
 
 	private void complexOperator(Complex a, Complex b) {
-		// TODO Auto-generated method stub
-		
+		Complex output=new Complex(a.getReal()+b.getReal() , a.getImag()+b.getImag() );
+		output.print();
 	}
 		
 
