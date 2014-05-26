@@ -71,12 +71,12 @@ public class main {
 			break;
 		case 7:
 			Stack stack = new Stack();
-			double item=1;
-			while(item!=0){
+			double item=0;
+			do{
 				System.out.println("請輸入數值，輸入0結束輸入:");
 				item=scan.nextDouble();
 				stack.push(item);
-			}
+			}while(item!=0);
 			
 			new Adder(stack);
 			break;
