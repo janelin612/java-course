@@ -1,5 +1,7 @@
 package d0526;
 
+import java.util.Stack;
+
 public class Adder {
 	/***************
 	 * 字元與字串相加
@@ -34,10 +36,14 @@ public class Adder {
 	public Adder(Complex a,Complex b){
 		complexOperator(a,b);
 	}
+	public Adder(Stack stack){
+		stackOperator(stack);
+	}
 	
 	
 	
 	
+
 	private void charAndStringOperator(char c, String s) {
 		char[] stringArray=s.toCharArray();
 		final int stringLength=stringArray.length;
@@ -76,6 +82,17 @@ public class Adder {
 	private void complexOperator(Complex a, Complex b) {
 		Complex output=new Complex(a.getReal()+b.getReal() , a.getImag()+b.getImag() );
 		output.print();
+	}
+	
+	private void stackOperator(Stack stack) {
+		double sum=0;
+		double item=0;
+		for(int i=0;i<stack.size();i++){
+			item=(double) stack.pop();
+			sum+=item;
+		}
+		
+		System.out.println(sum);
 	}
 		
 
