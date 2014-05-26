@@ -80,7 +80,10 @@ public class main {
 			new Adder(stack);
 			break;
 			default:
-				System.out.print("無此項目");
+				System.out.print("無此項目，請重新輸入:");
+				int reflag = scan.nextInt();
+				operator(reflag);
+				
 		}
 	}
 
