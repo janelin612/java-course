@@ -51,7 +51,6 @@ public class main {
 			System.out.println("請輸入整數:");
 			int integer2=scan.nextInt();
 
-			
 			new Adder(integer2,doub2);
 			break;
 		case 5:
