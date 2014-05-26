@@ -5,7 +5,6 @@ import java.util.Stack;
 
 public class main {
 	static Scanner scan=new Scanner(System.in);
-	static String input1,input2;
 
 	public static void main(String[] args) {
 		System.out.println("請選擇需要的運算:");
