@@ -85,9 +85,10 @@ public class Adder {
 	}
 	
 	private void stackOperator(Stack stack) {
+		final int  stackSize=stack.size();
 		double sum=0;
 		double item=0;
-		for(int i=0;i<stack.size();i++){
+		for(int i=0;i<stackSize;i++){
 			item=(double) stack.pop();
 			sum+=item;
 		}
