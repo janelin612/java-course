@@ -9,5 +9,15 @@ public class Complex {
 		imag=imaginaryNum;
 	}
 	
+	public double getReal(){
+		return real;
+	}
+	public double getImag(){
+		return imag;
+	}
+	
+	public void print(){
+		System.out.println(real+"+"+imag+"i");
+	}
 
 }
