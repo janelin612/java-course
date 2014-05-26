@@ -28,6 +28,9 @@ public class TwoDimArray {
 		System.out.println(element[0]+" "+element[1]+"\n"+element[2]+" "+element[3]);
 	}
 	
+	/*
+	 * 讓使用者自行輸入的方法
+	 */
 	public void initial(){
 		Scanner scan=new Scanner(System.in);
 		for(int i=0;i<4;i++ ){

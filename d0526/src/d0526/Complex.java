@@ -27,6 +27,9 @@ public class Complex {
 		System.out.println(real+"+"+imag+"i");
 	}
 	
+	/*
+	 * 讓使用者自行輸入的方法
+	 */
 	public void initial(){
 		Scanner scan=new Scanner(System.in);
 		

@@ -13,13 +13,6 @@ public class Adder {
 	 * 任意項數相加
 	 ***************/
 	
-	
-	private int i;
-	private double d;
-	
-	private Complex complexA,complexB;
-	
-	
 	//全部的建構子
 	public Adder(char c,String s){
 		charAndStringOperator(c,s);
@@ -41,9 +34,11 @@ public class Adder {
 	}
 	
 	
-	
-	
-
+	/*
+	 * 將字串打散成字元陣列後
+	 * 開一個新的陣列將字元跟原本的字元陣列結合
+	 * 然後輸出
+	 */
 	private void charAndStringOperator(char c, String s) {
 		char[] stringArray=s.toCharArray();
 		final int stringLength=stringArray.length;
@@ -58,6 +53,11 @@ public class Adder {
 		
 	}
 
+	/*
+	 * 分別在四個象限的值相加後
+	 * 建立一個新的二微陣列實體
+	 * 然後輸出
+	 */
 	private void twoDimArrayOperator(TwoDimArray a, TwoDimArray b) {
 		int LU=a.getElement(0)+b.getElement(0);
 		int RU=a.getElement(1)+b.getElement(1);
@@ -69,6 +69,7 @@ public class Adder {
 		c.print();
 	}
 
+	
 	private void intAndDoubleOperator(int integer, double doub) {
 		System.out.println(integer+doub);
 		
@@ -79,11 +80,20 @@ public class Adder {
 		
 	}
 
+	/*
+	 * 分別各自取出實部虛部
+	 * 然後輸出
+	 */
 	private void complexOperator(Complex a, Complex b) {
 		Complex output=new Complex(a.getReal()+b.getReal() , a.getImag()+b.getImag() );
 		output.print();
 	}
 	
+	/*
+	 * 任意項加總
+	 * 將原先推入的元素一個一個推出後加總
+	 * 然後輸出
+	 */
 	private void stackOperator(Stack stack) {
 		final int  stackSize=stack.size();
 		double sum=0;
