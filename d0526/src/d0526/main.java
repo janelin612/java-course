@@ -1,6 +1,7 @@
 package d0526;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class main {
 	static Scanner scan=new Scanner(System.in);
@@ -8,8 +9,8 @@ public class main {
 
 	public static void main(String[] args) {
 		System.out.println("請選擇需要的運算:");
-		System.out.println("1.字元字串相加\n2.二微陣列相加\n3.整數實數相加");
-		System.out.println("4.實數整數相加\n5.複數相加");
+		System.out.println("1.字元字串相加\n2.二維陣列相加\n3.整數實數相加");
+		System.out.println("4.實數整數相加\n5.複數相加\n6.遞增二\n7.任意項數相加");
 		int flag=scan.nextInt();
 		operator(flag);
 		
@@ -26,15 +27,15 @@ public class main {
 			new Adder(ch,st);
 			break;
 		case 2:
-			TwoDimArray a=new TwoDimArray();
-			TwoDimArray b=new TwoDimArray();
+			TwoDimArray arrayA=new TwoDimArray();
+			TwoDimArray arrayB=new TwoDimArray();
 			
 			System.out.println("陣列一:");
-			a.initial();
+			arrayA.initial();
 			System.out.println("陣列二:");
-			b.initial();
+			arrayB.initial();
 			
-			new Adder(a,b);
+			new Adder(arrayA,arrayB);
 			break;
 		case 3:
 			System.out.println("請輸入整數:");
@@ -54,7 +55,32 @@ public class main {
 			new Adder(integer2,doub2);
 			break;
 		case 5:
+			Complex comA=new Complex();
+			Complex comB=new Complex();
 			
+			System.out.println("複數一:");
+			comA.initial();
+			System.out.println("複數二:");
+			comB.initial();
+			
+			new Adder(comA,comB);
+			break;
+		case 6:
+			System.out.println("請輸入值:");
+			double num=scan.nextDouble();
+			System.out.println(num+=2);
+			break;
+		case 7:
+			Stack stack = new Stack();
+			double item=1;
+			while(item!=0){
+				System.out.println("請輸入數值，輸入0結束輸入:");
+				item=scan.nextDouble();
+				stack.push(item);
+			}
+			
+			new Adder(stack);
+			break;
 			default:
 				System.out.print("無此項目");
 		}
