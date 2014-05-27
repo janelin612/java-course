@@ -83,8 +83,7 @@ public class Adder {
 	 * 然後輸出
 	 */
 	private void complexOperator(Complex a, Complex b) {
-		Complex output=new Complex(a.getReal()+b.getReal() , a.getImag()+b.getImag() );
-		output.print();
+		new Complex(a.getReal()+b.getReal() , a.getImag()+b.getImag() ).print();
 	}
 	
 	/*
