@@ -5,7 +5,7 @@ import java.util.Stack;
 public class Adder {
 	/***************
 	 * 字元與字串相加
-	 * 二微陣列相加
+	 * 二維陣列相加
 	 * 整數與實數相加
 	 * 實數與整數相加
 	 * 複數相加
@@ -39,12 +39,12 @@ public class Adder {
 	 * 開一個新的陣列將字元跟原本的字元陣列結合
 	 * 然後輸出
 	 */
-	private void charAndStringOperator(char c, String s) {
-		char[] stringArray=s.toCharArray();
-		final int stringLength=stringArray.length;
-		char[] output=new char[stringLength+1];
+	private void charAndStringOperator(char inputChar, String inputString) {
+		char[] stringArray=inputString.toCharArray();
+		final int stringLength=stringArray.length;	//獲得字串的字數
+		char[] output=new char[stringLength+1];		//新增一個可以容納原本字串加一個字元的陣列
 		
-		output[0]=c;
+		output[0]=inputChar;
 		for(int i=0;i<stringLength;i++){
 			output[i+1]=stringArray[i];
 		}
