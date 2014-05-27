@@ -24,12 +24,12 @@ public class Adder {
 		intAndDoubleOperator(integer,doub);
 	}
 	public Adder(double doub,int integer){
-		doubleAndIntOperator(doub,integer);
+		intAndDoubleOperator(integer,doub);
 	}
 	public Adder(Complex a,Complex b){
 		complexOperator(a,b);
 	}
-	public Adder(Stack stack){
+	public Adder(Stack<Double> stack){
 		stackOperator(stack);
 	}
 	
@@ -73,11 +73,6 @@ public class Adder {
 		
 	}
 
-	private void doubleAndIntOperator(double doub, int integer) {
-		System.out.println(integer+doub);
-		
-	}
-
 	/*
 	 * 分別各自取出實部虛部
 	 * 然後輸出
@@ -91,7 +86,7 @@ public class Adder {
 	 * 將原先推入的元素一個一個推出後加總
 	 * 然後輸出
 	 */
-	private void stackOperator(Stack stack) {
+	private void stackOperator(Stack<Double> stack) {
 		final int  stackSize=stack.size();
 		double sum=0;
 		double item=0;
