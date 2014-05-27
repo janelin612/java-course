@@ -55,18 +55,16 @@ public class Adder {
 
 	/*
 	 * 分別在四個象限的值相加後
-	 * 建立一個新的二微陣列實體
+	 * 建立一個新的二維陣列實體
 	 * 然後輸出
 	 */
 	private void twoDimArrayOperator(TwoDimArray a, TwoDimArray b) {
-		int LU=a.getElement(0)+b.getElement(0);
-		int RU=a.getElement(1)+b.getElement(1);
-		int LD=a.getElement(2)+b.getElement(2);
-		int RD=a.getElement(3)+b.getElement(3);
+		int[] newElement = new int[4];
+		for(int i=0;i<4;i++)
+			newElement[i]=a.getElement(i)+b.getElement(i);
 		
-		TwoDimArray c=new TwoDimArray(LU,RU,LD,RD);
+		new TwoDimArray(newElement[0],newElement[1],newElement[2],newElement[3]).print();
 		
-		c.print();
 	}
 
 	
