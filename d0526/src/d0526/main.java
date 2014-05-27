@@ -66,10 +66,11 @@ public class main {
 		case 6:
 			System.out.println("請輸入值:");
 			double num=scan.nextDouble();
-			System.out.println(num+=2);
+
+			new Adder(num,2);
 			break;
 		case 7:
-			Stack stack = new Stack();
+			Stack<Double> stack = new Stack<Double>();
 			double item=0;
 			do{
 				System.out.println("請輸入數值，輸入0結束輸入:");
