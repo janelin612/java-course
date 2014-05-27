@@ -30,7 +30,7 @@ public class Complex {
 	/*
 	 * 讓使用者自行輸入的方法
 	 */
-	public void initial(){
+	public void manualInitial(){
 		Scanner scan=new Scanner(System.in);
 		
 		System.out.println("請輸入實部:");

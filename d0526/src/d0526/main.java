@@ -30,9 +30,9 @@ public class main {
 			TwoDimArray arrayB=new TwoDimArray();
 			
 			System.out.println("陣列一:");
-			arrayA.initial();
+			arrayA.manualInitial();
 			System.out.println("陣列二:");
-			arrayB.initial();
+			arrayB.manualInitial();
 			
 			new Adder(arrayA,arrayB);
 			break;
@@ -57,9 +57,9 @@ public class main {
 			Complex comB=new Complex();
 			
 			System.out.println("複數一:");
-			comA.initial();
+			comA.manualInitial();
 			System.out.println("複數二:");
-			comB.initial();
+			comB.manualInitial();
 			
 			new Adder(comA,comB);
 			break;

@@ -31,7 +31,7 @@ public class TwoDimArray {
 	/*
 	 * 讓使用者自行輸入的方法
 	 */
-	public void initial(){
+	public void manualInitial(){
 		Scanner scan=new Scanner(System.in);
 		for(int i=0;i<4;i++ ){
 			System.out.print("請輸入第"+(i+1)+"個值");
