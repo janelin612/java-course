@@ -53,8 +53,8 @@ public class main {
 			new Adder(integer2,doub2);
 			break;
 		case 5:
-			Complex comA=new Complex();
-			Complex comB=new Complex();
+			ComplexNum comA=new ComplexNum();
+			ComplexNum comB=new ComplexNum();
 			
 			System.out.println("複數一:");
 			comA.manualInitial();

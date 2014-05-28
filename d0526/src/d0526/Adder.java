@@ -26,7 +26,7 @@ public class Adder {
 	public Adder(double doub,int integer){
 		intAndDoubleOperator(integer,doub);
 	}
-	public Adder(Complex a,Complex b){
+	public Adder(ComplexNum a,ComplexNum b){
 		complexOperator(a,b);
 	}
 	public Adder(Stack<Double> stack){
@@ -77,8 +77,8 @@ public class Adder {
 	 * 分別各自取出實部虛部
 	 * 然後輸出
 	 */
-	private void complexOperator(Complex a, Complex b) {
-		new Complex(a.getReal()+b.getReal() , a.getImag()+b.getImag() ).print();
+	private void complexOperator(ComplexNum a, ComplexNum b) {
+		new ComplexNum(a.getReal()+b.getReal() , a.getImag()+b.getImag() ).print();
 	}
 	
 	/*

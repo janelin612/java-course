@@ -3,15 +3,15 @@ package d0526;
 import java.util.Scanner;
 
 //複數的資料結構
-public class Complex {
+public class ComplexNum {
 	
 	private double real,imag;
 	
-	public Complex(double realNum,double imaginaryNum){
+	public ComplexNum(double realNum,double imaginaryNum){
 		real=realNum;
 		imag=imaginaryNum;
 	}
-	public Complex(){
+	public ComplexNum(){
 		real=0;
 		imag=0;
 	}
