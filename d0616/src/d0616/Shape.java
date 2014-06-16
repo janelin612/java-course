@@ -2,14 +2,7 @@ package d0616;
 
 
 public abstract class Shape implements Area,Perimeter{
-	double[] center;
-	
-	public Shape(){
-		center = new double[2];
-		center[0]=0;
-		center[1]=0;
-	}
-	
+
 }
 
 class Circle extends Shape implements Area,Perimeter {
@@ -31,7 +24,7 @@ class Circle extends Shape implements Area,Perimeter {
 }
 class Triangle extends Shape implements Area {
 	private double[] edge;
-	private double halfPerimeter;
+	private double halfPerimeter; //半周長，供海龍公式使用
 	
 	public Triangle(double edge1,double edge2,double edge3){
 		edge=new double[3];
@@ -71,6 +64,7 @@ class Rectangle extends Shape implements Perimeter{
 	}
 	
 }
+
 
 class Cylinder extends Circle {
 	private double hight;
