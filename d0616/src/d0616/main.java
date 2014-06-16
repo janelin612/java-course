@@ -17,7 +17,7 @@ class Circle extends Shape implements Area,Perimeter {
 	private double radius;
 	private static final double pi=3.1415926;
 	
-	Circle(double r){
+	public Circle(double r){
 		radius=r;
 	}
 	
@@ -33,7 +33,7 @@ class Circle extends Shape implements Area,Perimeter {
 class Triangle extends Shape implements Area,Perimeter {
 	private double[] edge;
 	
-	Triangle(double edge1,double edge2,double edge3){
+	public Triangle(double edge1,double edge2,double edge3){
 		edge=new double[3];
 		edge[0]=edge1;
 		edge[1]=edge2;
@@ -57,7 +57,7 @@ class Rectangle extends Shape implements Area,Perimeter{
 	private double length;
 	private double width;
 	
-	Rectangle(double l,double w){
+	public Rectangle(double l,double w){
 		length=l;
 		width=w;
 	}
