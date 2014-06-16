@@ -1,7 +1,7 @@
 package d0616;
 
 
-public abstract class Shape {
+public abstract class Shape implements Area,Perimeter{
 	double[] center;
 	
 	public Shape(){

@@ -8,7 +8,15 @@ package d0616;
 public class main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Shape[] shape=new Shape[3];
+		shape[0]=new Circle(5);
+		shape[1]=new Triangle(3,4,5);
+		shape[2]=new Rectangle(6,4);
+		
+		for(int i=0;i<shape.length;i++){
+			System.out.println("The Area of shape"+(i+1)+" is:"+shape[i].area());
+		}
+		
 
 	}
 
@@ -30,30 +38,31 @@ class Circle extends Shape implements Area,Perimeter {
 	}
 	
 }
-class Triangle extends Shape implements Area,Perimeter {
+class Triangle extends Shape implements Area {
 	private double[] edge;
+	private double halfPerimeter;
 	
 	public Triangle(double edge1,double edge2,double edge3){
 		edge=new double[3];
 		edge[0]=edge1;
 		edge[1]=edge2;
 		edge[2]=edge3;
+		
+		halfPerimeter=this.perimeter()*0.5;
 	}
 	
 	public double perimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		return edge[0]+edge[1]+edge[2];
 	}
 
-
 	public double area() {
-		// TODO Auto-generated method stub
-		return 0;
+		//海龍公式
+		return Math.sqrt(halfPerimeter*(halfPerimeter-edge[0])*(halfPerimeter-edge[1])*(halfPerimeter-edge[2]));
 	}
 
 	
 }
-class Rectangle extends Shape implements Area,Perimeter{
+class Rectangle extends Shape implements Perimeter{
 	private double length;
 	private double width;
 	
