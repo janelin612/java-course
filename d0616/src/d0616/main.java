@@ -18,6 +18,11 @@ public class main {
 			System.out.println("The Perimeter of shape"+(i+1)+" is:"+shape[i].perimeter());
 			System.out.println("=====");
 		}
+		
+		Cylinder cylinder=new Cylinder(5,2);
+		Sphere sphere = new Sphere(5);
+		System.out.println("The volume of cylinder is:"+cylinder.volume());
+		System.out.println("The volume of sphere is:"+sphere.volume());
 
 	}
 
