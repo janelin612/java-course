@@ -15,8 +15,9 @@ public class main {
 		
 		for(int i=0;i<shape.length;i++){
 			System.out.println("The Area of shape"+(i+1)+" is:"+shape[i].area());
+			System.out.println("The Perimeter of shape"+(i+1)+" is:"+shape[i].perimeter());
+			System.out.println("=====");
 		}
-		
 
 	}
 
