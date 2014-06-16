@@ -15,7 +15,11 @@ public class main {
 }
 class Circle extends Shape implements Area,Perimeter {
 	private double radius;
-	private final double pi=3.1415926;
+	private static final double pi=3.1415926;
+	
+	Circle(double r){
+		radius=r;
+	}
 	
 	public double perimeter() {
 		return 2*radius*pi;
@@ -27,14 +31,21 @@ class Circle extends Shape implements Area,Perimeter {
 	
 }
 class Triangle extends Shape implements Area,Perimeter {
-
-	@Override
+	private double[] edge;
+	
+	Triangle(double edge1,double edge2,double edge3){
+		edge=new double[3];
+		edge[0]=edge1;
+		edge[1]=edge2;
+		edge[2]=edge3;
+	}
+	
 	public double perimeter() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+
 	public double area() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -45,7 +56,11 @@ class Triangle extends Shape implements Area,Perimeter {
 class Rectangle extends Shape implements Area,Perimeter{
 	private double length;
 	private double width;
-
+	
+	Rectangle(double l,double w){
+		length=l;
+		width=w;
+	}
 	
 	public double perimeter() {	
 		return 2*length*width;
