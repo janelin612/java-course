@@ -85,7 +85,7 @@ class Sphere extends Circle {
 	}
 	
 	public double volume(){
-		return 0.75*pi*radius*radius*radius;
+		return (4/3)*pi*radius*radius*radius;
 	}
 	
 }
