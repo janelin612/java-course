@@ -11,9 +11,11 @@ java-course
 [課程大綱](http://class-qry.acad.ncku.edu.tw/syllabus/online_display.php?syear=0102&sem=2&co_no=A510110&class_code=1)   
    
 編譯:   
-所有專案皆可直接於Eclipse內直接執行，若想要在終端機執行，請註解掉第一行的package資訊，再使用以下指令編譯   
+所有專案皆可直接於Eclipse內直接執行，若想要在終端機執行   
+前幾次專案請註解掉第一行的package資訊，再使用以下指令編譯     
 	<code>javac -encoding UTF-8 *.java</code>   
 除了最後兩個專案，由於他確實需要使用package的功能，故改用以下方式編譯   
 	<code>javac -encoding UTF-8 -d . *.java</code>   
-接著在原先編譯的目錄(無須進入子目錄)執行
-	<code>java packageName\codeName </code> 
+接著在原先編譯的目錄(無須進入子目錄)執行   
+	<code>java packageName\codeName </code>   
+其中包裹名稱以及程式名稱以該檔案為主。   
