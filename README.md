@@ -9,3 +9,7 @@ java-course
    
 關於課程介紹:   
 [課程大綱](http://class-qry.acad.ncku.edu.tw/syllabus/online_display.php?syear=0102&sem=2&co_no=A510110&class_code=1)   
+   
+編譯:   
+所有專案皆可直接於Eclipse內直接執行，若想要在終端機執行，請註解掉第一行的package資訊，再使用以下指令編譯   
+	javac *.java
