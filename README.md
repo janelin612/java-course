@@ -16,9 +16,15 @@ java-course
 所有專案皆可直接於Eclipse內直接執行，惟須先將檢視編碼改為UTF-8   
 若想要在cmd執行   
 前幾次專案請註解掉第一行的package宣告，再使用以下指令編譯     
-'javac -encoding UTF-8 *.java'   
+'''
+javac -encoding UTF-8 *.java
+'''
 除了最後兩個專案，由於他確實需要使用package的功能，故改用以下方式編譯   
-'javac -encoding UTF-8 -d . *.java'    
+'''
+javac -encoding UTF-8 -d . *.java
+''' 
 接著在原先編譯的目錄(無須進入子目錄)執行   
-'java packageName\codeName'   
+'''
+java packageName\codeName
+'''
 其中packageName以及codeName依各檔案做修改。   
