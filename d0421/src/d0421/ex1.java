@@ -25,10 +25,6 @@ public class ex1 {
 			else{
 				System.out.println("範圍錯誤 請重新輸入");
 			}
-			
-				
-	
-
 		}
 	}
 }
