@@ -50,7 +50,7 @@ class Motorcycle {
 		calculateFinalReductionRatio();
 		
 		//引擎轉速
-		engineRotation=rearWheelSystem.rearTire.speedToWheelRotation(speed)*this.finalReductionRatio;
+		engineRotation=rearWheelSystem.speedToWheelRotation(speed)*this.finalReductionRatio;
 		
 		System.out.println("引擎轉速為:"+engineRotation+"rpm");
 	}
@@ -69,7 +69,7 @@ class Motorcycle {
 		
 		//輪轉速
 		double realWheelRotation=engineRotation/this.finalReductionRatio;
-		speed=rearWheelSystem.rearTire.wheelRoataionTospeed(realWheelRotation);
+		speed=rearWheelSystem.wheelRoataionTospeed(realWheelRotation);
 		System.out.println("車速為:"+speed+"km/hr");
 	}
 	

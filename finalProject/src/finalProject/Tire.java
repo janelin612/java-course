@@ -24,17 +24,9 @@ class Tire {
 	}
 	
 	//周長(公尺)
-	private double getPerimeter(){
+	public double getPerimeter(){
 		return ousideDiameter*pi;
 	}
 	
-	//回傳rpm
-	public double speedToWheelRotation(double speed){
-		return (speed/this.getPerimeter())*secondToMinute;
-	}
-	
-	//回傳時速
-	public double wheelRoataionTospeed(double wheelRotation){
-		return wheelRotation*this.getPerimeter()*secondToMinute/1000.0;
-	}
+
 }
