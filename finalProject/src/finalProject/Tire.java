@@ -3,14 +3,13 @@ package finalProject;
  * 輪胎
  */
 class Tire {
-	//基本常數
+	
 	static final double pi=3.14159;
 	static final double inchToMeter=0.0254; //吋轉公尺
-	static final int secondToMinute=60; //秒轉分鐘
 	
-	double width; //輪胎寬度(公尺)
-	double flatnessRatio;  //扁平比(%)
-	double insideDiameter; //內徑(吋)
+	private double width; //輪胎寬度(公尺)
+	private double flatnessRatio;  //扁平比(%)
+	private double insideDiameter; //內徑(吋)
 	private double ousideDiameter; //外徑(吋)
 
 	//constructor
