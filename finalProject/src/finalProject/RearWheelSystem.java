@@ -8,17 +8,18 @@ class RearWheelSystem {
 	Tire rearTire;
 	static final int secondToMinute=60; //秒轉分鐘
 	
+	//constructor
 	RearWheelSystem(){
 		this.wheelAxle=new WheelAxle(3.071);
 		this.rearTire=new Tire(140,70,17);
 	}
 	
-	//回傳rpm
+	//傳入速度(m/s)回傳轉速(rpm)
 	public double speedToWheelRotation(double speed){
 		return (speed/rearTire.getPerimeter())*secondToMinute;
 	}
 	
-	//回傳時速
+	//傳入轉速(rpm)回傳時速(km/hr)
 	public double wheelRoataionTospeed(double wheelRotation){
 		return wheelRotation*rearTire.getPerimeter()*secondToMinute/1000.0;
 	}
