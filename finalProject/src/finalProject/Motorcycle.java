@@ -8,6 +8,7 @@ class Motorcycle {
 	CrankShaft crank;
 	double finalReductionRatio; //最終傳動比
 	double speed; //車速
+	double engineRotation; //引擎轉速
 	static final double KmHrToMS=1000.0/3600.0; //時速轉換
 	
 	//Constructor
@@ -29,8 +30,10 @@ class Motorcycle {
 				break;
 			case 2:
 				rotationToSpeed();
+				break;
 				default:
 					System.out.println("輸入錯誤");	
+					functionChosen();
 		}
 	}
 
@@ -45,17 +48,32 @@ class Motorcycle {
 		
 		setTransmission();
 		calculateFinalReductionRatio();
-		double engineRotation=rearWheelSystem.rearTire.speedToWheelRotation(speed)*this.finalReductionRatio;
-		System.out.print("引擎轉速為:"+engineRotation+"rpm");
+		
+		//引擎轉速
+		engineRotation=rearWheelSystem.rearTire.speedToWheelRotation(speed)*this.finalReductionRatio;
+		
+		System.out.println("引擎轉速為:"+engineRotation+"rpm");
 	}
 
 
 
 	private void rotationToSpeed() {
-		// TODO 自動產生的方法 Stub
+		System.out.println("請輸入引擎轉速(rpm)");
+		engineRotation=scan.nextDouble();
+		if(engineRotation<0){
+			System.out.println("轉速不可小於0");
+			rotationToSpeed();
+		}
+		setTransmission();
+		calculateFinalReductionRatio();
 		
+		//輪轉速
+		double realWheelRotation=engineRotation/this.finalReductionRatio;
+		speed=rearWheelSystem.rearTire.wheelRoataionTospeed(realWheelRotation);
+		System.out.println("車速為:"+speed+"km/hr");
 	}
-
+	
+	//讓使用者選定檔位
 	private void setTransmission() {
 		int transminnionFlag;
 		System.out.println("請選擇檔位(1~6檔 空檔請輸入0)");
@@ -67,6 +85,7 @@ class Motorcycle {
 		this.transmission.setChosenGear(transminnionFlag);
 	}
 
+	//換算最終傳動比
 	private void calculateFinalReductionRatio() {
 		double ratio1=crank.getReductionRatio();
 		double ratio2=transmission.getReductionRatio(transmission.chosenGear);

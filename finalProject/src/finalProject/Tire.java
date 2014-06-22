@@ -9,6 +9,7 @@ class Tire {
 	private double ousideDiameter; //外徑(吋)
 	static final double pi=3.14159;
 	static final double inchToMeter=0.0254;
+	static final int secondToMinute=60;
 	
 	Tire(double width,double ratio,double diameter){
 		this.width=width*0.001;
@@ -17,11 +18,23 @@ class Tire {
 		calculatorOutsideDiameter();
 	}
 
+	//外徑(公尺)
 	private void calculatorOutsideDiameter() {
-		this.ousideDiameter=insideDiameter+2*flatnessRatio*width;
+		this.ousideDiameter=insideDiameter*inchToMeter+2*flatnessRatio*width;
 	}
-
-	public double getPerimeter(){
-		return ousideDiameter*pi*inchToMeter;
+	
+	//周長(公尺)
+	private double getPerimeter(){
+		return ousideDiameter*pi;
+	}
+	
+	//回傳rpm
+	public double speedToWheelRotation(double speed){
+		return (speed/this.getPerimeter())*secondToMinute;
+	}
+	
+	//回傳時速
+	public double wheelRoataionTospeed(double wheelRotation){
+		return wheelRotation*this.getPerimeter()*secondToMinute/1000.0;
 	}
 }
