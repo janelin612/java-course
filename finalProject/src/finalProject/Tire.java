@@ -11,7 +11,7 @@ class Tire {
 	static final double inchToMeter=0.0254;
 	
 	Tire(double width,double ratio,double diameter){
-		this.width=width;
+		this.width=width*0.001;
 		this.flatnessRatio=ratio*0.01;
 		this.insideDiameter=diameter;
 		calculatorOutsideDiameter();
