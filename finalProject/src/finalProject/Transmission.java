@@ -17,7 +17,7 @@ class Transmission {
 		gearBox[6]=new GearBox(0.892);
 	}
 	
-	public double getGear(int number){
+	public double getReductionRatio(int number){
 		return gearBox[number].getReductionRatio();
 	}
 	public void setChosenGear(int i){
