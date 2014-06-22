@@ -3,10 +3,11 @@ package finalProject;
  * 六檔變速箱
  */
 class Transmission {
-	GearBox[] gearBox;
-	int chosenGear;
+	private GearBox[] gearBox;
+	private int chosenGear;
 
 	public Transmission(){
+		chosenGear=0; //預設為空檔
 		gearBox=new GearBox[7];
 		gearBox[0]=new GearBox(0);
 		gearBox[1]=new GearBox(2.6);
@@ -17,9 +18,11 @@ class Transmission {
 		gearBox[6]=new GearBox(0.892);
 	}
 	
-	public double getReductionRatio(int number){
-		return gearBox[number].getReductionRatio();
+	//回傳選定檔位的減速比
+	public double getReductionRatio(){
+		return gearBox[chosenGear].getReductionRatio();
 	}
+	
 	public void setChosenGear(int i){
 		this.chosenGear=i;
 	}

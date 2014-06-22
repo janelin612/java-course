@@ -16,7 +16,7 @@ class GearBox {
 	}
 }
 
-
+//曲軸
 class CrankShaft extends GearBox{
 
 	public CrankShaft(double ratio) {
@@ -25,6 +25,7 @@ class CrankShaft extends GearBox{
 
 }
 
+//後輪軸
 class WheelAxle extends GearBox{
 
 	public WheelAxle(double ratio) {
