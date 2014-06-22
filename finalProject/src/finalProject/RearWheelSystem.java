@@ -14,12 +14,12 @@ class RearWheelSystem {
 	
 	//回傳rpm
 	public double speedToWheelRotation(double speed){
-		return (speed/rearTire.getPerimeter())*rearTire.secondToMinute;
+		return (speed/rearTire.getPerimeter())*Tire.secondToMinute;
 	}
 	
 	//回傳時速
 	public double wheelRoataionTospeed(double wheelRotation){
-		return wheelRotation*rearTire.getPerimeter()*rearTire.secondToMinute/1000.0;
+		return wheelRotation*rearTire.getPerimeter()*Tire.secondToMinute/1000.0;
 	}
 	
 }
