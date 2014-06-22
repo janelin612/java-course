@@ -19,9 +19,13 @@ class Motorcycle {
 	}
 	
 	//操作介面由此開始
-	public void functionChosen(){
-		int flag=0;
+	public void start(){
 		System.out.println("本系統將為你換算Ninja250在各檔位的時速與引擎轉速");
+		functionChosen();
+	}
+	
+	private void functionChosen(){
+		int flag=0;
 		System.out.println("請輸入1 or 2選擇: 1.時速換轉速 2.轉速換時速");
 		flag=scan.nextInt();			
 		switch (flag){
@@ -45,6 +49,10 @@ class Motorcycle {
 			System.out.println("時速不可小於0");
 			speedToRotation();
 		}
+		if(speed>41.667){
+			System.out.println("時速過高(<150)");
+			speedToRotation();
+		}
 		
 		setTransmission();
 		calculateFinalReductionRatio();
@@ -64,6 +72,11 @@ class Motorcycle {
 			System.out.println("轉速不可小於0");
 			rotationToSpeed();
 		}
+		if(engineRotation>13000){
+			System.out.println("轉速過高(<13,000)");
+			rotationToSpeed();
+		}
+		
 		setTransmission();
 		calculateFinalReductionRatio();
 		
