@@ -57,7 +57,7 @@ class Motorcycle {
 		
 		//引擎轉速=輪轉速x最終傳動比 
 		engineRotation=rearWheelSystem.speedToWheelRotation(speed)*finalReductionRatio();
-		if(finalReductionRatio()!=0)
+		if(finalReductionRatio()!=0) //處理空檔特殊條件
 			System.out.println("引擎轉速為:"+engineRotation+"rpm");
 		else
 			System.out.println("進入空檔，故引擎轉速未知");
@@ -100,7 +100,7 @@ class Motorcycle {
 		this.transmission.setChosenGear(transminnionFlag);
 	}
 
-	//最終傳動比
+	//最終傳動比=第一減速比x第二減速比x變速箱減速比
 	private double finalReductionRatio() {
 		double ratio1=crank.getReductionRatio();
 		double ratio2=transmission.getReductionRatio();
