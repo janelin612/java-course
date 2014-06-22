@@ -4,6 +4,7 @@ package finalProject;
  */
 class Transmission {
 	GearBox[] gearBox;
+	int chosenGear;
 
 	public Transmission(){
 		gearBox=new GearBox[7];
@@ -18,6 +19,9 @@ class Transmission {
 	
 	public double getGear(int number){
 		return gearBox[number].getReductionRatio();
+	}
+	public void setChosenGear(int i){
+		this.chosenGear=i;
 	}
 	
 }
