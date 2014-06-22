@@ -17,6 +17,14 @@ class Motorcycle {
 		this.crank=new CrankShaft(3.086);
 	}
 	
+	//最終傳動比=第一減速比x第二減速比x變速箱減速比
+	private double finalReductionRatio() {
+		double ratio1=crank.getReductionRatio();
+		double ratio2=transmission.getReductionRatio();
+		double ratio3=rearWheelSystem.wheelAxle.getReductionRatio();
+		return ratio1*ratio2*ratio3;
+	}
+	
 	//操作介面由此開始
 	public void start(){
 		System.out.println("本系統將為你換算Ninja250在各檔位的時速與引擎轉速");
@@ -100,11 +108,5 @@ class Motorcycle {
 		this.transmission.setChosenGear(transminnionFlag);
 	}
 
-	//最終傳動比=第一減速比x第二減速比x變速箱減速比
-	private double finalReductionRatio() {
-		double ratio1=crank.getReductionRatio();
-		double ratio2=transmission.getReductionRatio();
-		double ratio3=rearWheelSystem.wheelAxle.getReductionRatio();
-		return ratio1*ratio2*ratio3;
-	}
+
 }
