@@ -6,7 +6,6 @@ class Motorcycle {
 	RearWheelSystem rearWheelSystem;
 	Transmission transmission;
 	CrankShaft crank;
-	double finalReductionRatio; //最終傳動比
 	double speed; //車速
 	double engineRotation; //引擎轉速
 	static final double KmHrToMS=1000.0/3600.0; //時速轉換
@@ -26,7 +25,7 @@ class Motorcycle {
 	
 	private void functionChosen(){
 		int flag=0;
-		System.out.println("請輸入1 or 2選擇: 1.時速換轉速 2.轉速換時速");
+		System.out.println("請輸入 1 or 2 選擇:\n 1.時速換轉速\n 2.轉速換時速");
 		flag=scan.nextInt();			
 		switch (flag){
 			case 1:
@@ -35,9 +34,9 @@ class Motorcycle {
 			case 2:
 				rotationToSpeed();
 				break;
-				default:
-					System.out.println("輸入錯誤，請重新輸入");	
-					functionChosen();
+			default:
+				System.out.println("輸入錯誤，請重新輸入");	
+				functionChosen();
 		}
 	}
 
@@ -55,11 +54,10 @@ class Motorcycle {
 		}
 		
 		setTransmission();
-		calculateFinalReductionRatio();
 		
 		//引擎轉速=輪轉速x最終傳動比 
-		engineRotation=rearWheelSystem.speedToWheelRotation(speed)*this.finalReductionRatio;
-		if(finalReductionRatio!=0)
+		engineRotation=rearWheelSystem.speedToWheelRotation(speed)*finalReductionRatio();
+		if(finalReductionRatio()!=0)
 			System.out.println("引擎轉速為:"+engineRotation+"rpm");
 		else
 			System.out.println("進入空檔，故引擎轉速未知");
@@ -78,11 +76,10 @@ class Motorcycle {
 		}
 		
 		setTransmission();
-		calculateFinalReductionRatio();
 		
 		//輪轉速=引擎轉速/最終傳動比
-		double realWheelRotation=engineRotation/this.finalReductionRatio;
-		if(finalReductionRatio!=0) //處理空檔特殊條件
+		double realWheelRotation=engineRotation/finalReductionRatio();
+		if(finalReductionRatio()!=0) //處理空檔特殊條件
 			speed=rearWheelSystem.wheelRoataionTospeed(realWheelRotation);
 		else{
 			speed=0;
@@ -103,11 +100,11 @@ class Motorcycle {
 		this.transmission.setChosenGear(transminnionFlag);
 	}
 
-	//換算最終傳動比
-	private void calculateFinalReductionRatio() {
+	//最終傳動比
+	private double finalReductionRatio() {
 		double ratio1=crank.getReductionRatio();
 		double ratio2=transmission.getReductionRatio();
 		double ratio3=rearWheelSystem.wheelAxle.getReductionRatio();
-		this.finalReductionRatio=ratio1*ratio2*ratio3;
+		return ratio1*ratio2*ratio3;
 	}
 }
