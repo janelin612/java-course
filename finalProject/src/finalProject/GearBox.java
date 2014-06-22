@@ -3,7 +3,7 @@ package finalProject;
  * 齒輪組
  * 
  */
-abstract class GearBox {
+class GearBox {
 
 	double redcutionRatio;
 	int drivingGearTooth;
