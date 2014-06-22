@@ -32,7 +32,7 @@ class Motorcycle {
 				rotationToSpeed();
 				break;
 				default:
-					System.out.println("輸入錯誤");	
+					System.out.println("輸入錯誤，請重新輸入");	
 					functionChosen();
 		}
 	}
@@ -40,7 +40,7 @@ class Motorcycle {
 
 	private void speedToRotation() {
 		System.out.println("請輸入時速(km/hr)");
-		speed=scan.nextDouble()*KmHrToMS;
+		speed=scan.nextDouble()*KmHrToMS; //輸入，順便轉換單位
 		if(speed<0){
 			System.out.println("時速不可小於0");
 			speedToRotation();
@@ -49,13 +49,13 @@ class Motorcycle {
 		setTransmission();
 		calculateFinalReductionRatio();
 		
-		//引擎轉速
+		//引擎轉速=輪轉速x最終傳動比 
 		engineRotation=rearWheelSystem.speedToWheelRotation(speed)*this.finalReductionRatio;
-		
-		System.out.println("引擎轉速為:"+engineRotation+"rpm");
+		if(finalReductionRatio!=0)
+			System.out.println("引擎轉速為:"+engineRotation+"rpm");
+		else
+			System.out.println("進入空檔，故引擎轉速未知");
 	}
-
-
 
 	private void rotationToSpeed() {
 		System.out.println("請輸入引擎轉速(rpm)");
@@ -67,9 +67,14 @@ class Motorcycle {
 		setTransmission();
 		calculateFinalReductionRatio();
 		
-		//輪轉速
+		//輪轉速=引擎轉速/最終傳動比
 		double realWheelRotation=engineRotation/this.finalReductionRatio;
-		speed=rearWheelSystem.wheelRoataionTospeed(realWheelRotation);
+		if(finalReductionRatio!=0) //處理空檔特殊條件
+			speed=rearWheelSystem.wheelRoataionTospeed(realWheelRotation);
+		else{
+			speed=0;
+			System.out.print("由於空檔，故理論");
+		}
 		System.out.println("車速為:"+speed+"km/hr");
 	}
 	
@@ -88,7 +93,7 @@ class Motorcycle {
 	//換算最終傳動比
 	private void calculateFinalReductionRatio() {
 		double ratio1=crank.getReductionRatio();
-		double ratio2=transmission.getReductionRatio(transmission.chosenGear);
+		double ratio2=transmission.getReductionRatio();
 		double ratio3=rearWheelSystem.wheelAxle.getReductionRatio();
 		this.finalReductionRatio=ratio1*ratio2*ratio3;
 	}
